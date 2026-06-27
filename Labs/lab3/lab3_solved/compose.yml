@@ -1,0 +1,22 @@
+services:
+  agent:
+    image: cybersec-agent-chainlit-lab3
+    env_file: .env
+    environment:
+      # LLM provider base URL (Groq by default; change to match your provider)
+      - API_BASE_URL=https://api.groq.com/openai/v1
+      # Select a model that supports tool use / function calling.
+      # Example Groq models: llama-3.3-70b-versatile, llama3-70b-8192
+      - MODEL=llama-3.3-70b-versatile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount project source into /app so code edits are picked up without rebuild.
+      - .:/app
+      # Container-only runtime state (do not commit to repo).
+      - /chainlit-runtime
+    working_dir: /chainlit-runtime
+    command: >
+      chainlit run /app/app/agent/app.py
+      --host 0.0.0.0
+      --port 8000
