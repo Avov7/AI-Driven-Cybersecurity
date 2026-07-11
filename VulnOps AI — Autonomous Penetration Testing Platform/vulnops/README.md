@@ -1,6 +1,6 @@
 # 🔴 VulnOps AI — Autonomous Penetration Testing Platform
 
-**Shaked Yakobi (322659384) & Ron Atia (209445519)**
+**Shaked Yakobi  & Aviv Heller & Afik Swisa
 Final Project — AI in Cybersecurity Course (NVIDIA Morpheus)
 
 ---
